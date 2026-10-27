@@ -8,15 +8,16 @@ Created on Oct 15 2024
 @author: claireguepin
 """
 
+from typing import Any, Optional
+
 # from crdb.mpl import draw_logo
 import matplotlib.pyplot as plt
-from typing import Any, Optional
-from matplotlib.lines import Line2D
 import numpy as np
 import pandas as pandas
-from plot_styles import get_plot_styles
-from plot_functions import draw_with_errorbars
+from matplotlib.lines import Line2D
 
+from plot_functions import draw_with_errorbars
+from plot_styles import get_plot_styles
 
 # =============================================================================
 # LOAD CUSTOM DATA
@@ -100,7 +101,6 @@ for key, value in marker_map.items():
 # LOCAL VERSION OF FIGURE
 
 
-
 # # =============================================================================
 # # LOAD LHAASO DATA TO OVERLAY
 
@@ -173,7 +173,7 @@ for exp in expetab:
             sys_lw=5,
             color=df_test["color"][exp],
             marker=df_test["marker"][exp],
-            plot_err_systematic=plot_err_systematic
+            plot_err_systematic=plot_err_systematic,
         )
 
         # # LHAASO
@@ -214,7 +214,7 @@ for exp in expetab:
                 sys_lw=5,
                 color=df_test["color"][exp],
                 marker=df_test["marker"][exp],
-                plot_err_systematic=plot_err_systematic
+                plot_err_systematic=plot_err_systematic,
             )
         except:
             print("Data not found")
@@ -258,7 +258,7 @@ for exp in expetab:
                 sys_lw=5,
                 color=df_test["color"][exp],
                 marker=df_test["marker"][exp],
-                plot_err_systematic=plot_err_systematic
+                plot_err_systematic=plot_err_systematic,
             )
         except:
             print("Data not found")
@@ -292,7 +292,7 @@ for exp in expetab:
                 sys_lw=5,
                 color=df_test["color"][exp],
                 marker=df_test["marker"][exp],
-                plot_err_systematic=plot_err_systematic
+                plot_err_systematic=plot_err_systematic,
             )
         except:
             print("Data not found")
@@ -331,7 +331,7 @@ for exp in expetab:
                 sys_lw=5,
                 color=df_test["color"][exp],
                 marker=df_test["marker"][exp],
-                plot_err_systematic=plot_err_systematic
+                plot_err_systematic=plot_err_systematic,
             )
         except:
             print("Data not found")

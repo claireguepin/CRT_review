@@ -9,22 +9,16 @@ Created on Wed Nov 29 16:08:56 2023
 @author: claireguepin
 """
 
+from pathlib import Path
+from typing import Any, Optional
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pandas
-from typing import Any, Optional
 from matplotlib.lines import Line2D
-from pathlib import Path
-from plot_styles import get_plot_styles
-from plot_functions import draw_with_errorbars
 
-plt.rcParams["font.family"] = "STIXGeneral"
-plt.rcParams["mathtext.fontset"] = "cm"
-plt.rcParams["font.size"] = 16
-plt.rcParams["xtick.labelsize"] = 16
-plt.rcParams["ytick.labelsize"] = 16
-plt.rcParams["xtick.top"] = True
-plt.rcParams["ytick.right"] = True
+from plot_functions import draw_with_errorbars
+from plot_styles import get_plot_styles
 
 # =============================================================================
 # LOAD CUSTOM DATA
@@ -51,10 +45,8 @@ expetab = np.array(
         "HAWC (2016/06-2017/02) QGSJet-II-03",
         "HAWC (2018-2019) QGSJet-II-04",
         "TAIGA-HiScore (2017/01-2018/12)",
-
         # 'LHAASO EPOS-LHC',
         "LHAASO-KM2A (2021/09-2022/12) EPOS-LHC",
-
         "EAS-TOP (1992/01-1999/12) QGSJet",
         "Maket-ANI (1997-2004) QGSJet-II-01",
         "DICE (1994/07-1996/03)",
@@ -69,19 +61,15 @@ expetab = np.array(
         "KASCADE-Grande (2004/03-2010/12) QGSJet-II-3",
         "KASCADE-Grande (2003/12-2011/10) SIBYLL2.3",
         "KASCADE-Grande (2004/03-2012/05) QGSJet-II-2",
-
-        'KASCADE-Grande EPOS-LHC',
+        "KASCADE-Grande EPOS-LHC",
         # "KASCADE-Grande (2003/01-2006/08) QGSJet-II.04",
-
         "KASCADE-Grande QGSjet-II-04",
         "GAMMA (2003/01-2007/12) SIBYLL",
         "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
         "TALE (2014/06/-2016/03) QGSJet-II-03",
         # 'Telescope Array Hybrid (2008/01-2015/05)',
-
-        'Telescope Array SD (2008/05 - 2024/05)',
+        "Telescope Array SD (2008/05 - 2024/05)",
         # "TA SD (2008/05-2019/05)",
-
         "Auger Hybrid (2004/01-2016/12) QGSJet-II-04+EPOS-LHC+SIBYLL2.3",
         "Auger SD750 (2014/01-2018/08)",
         "Auger SD750+SD1500 (2014/01-2018/08)",
@@ -109,9 +97,11 @@ expetab = np.array(
 # Test with values from LHAASO paper 2403.11832
 
 # Initialize DataFrame
-df_test = pandas.DataFrame(data=np.ones((len(expetab), 3)),
-                           index=expetab,
-                           columns=["E_rescaling", "color", "marker"])
+df_test = pandas.DataFrame(
+    data=np.ones((len(expetab), 3)),
+    index=expetab,
+    columns=["E_rescaling", "color", "marker"],
+)
 
 # Get styles from the config file
 e_rescaling, color_map, marker_map = get_plot_styles()
@@ -279,7 +269,7 @@ for exp in expetab:
             sys_lw=5,
             color=df_test["color"][exp],
             marker=df_test["marker"][exp],
-            plot_err_systematic=plot_err_systematic
+            plot_err_systematic=plot_err_systematic,
         )
         # color=colortab[ic],
         # marker=markertab[ic])

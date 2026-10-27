@@ -6,10 +6,11 @@ Created on Fri Oct  2 17:48:14 2026
 @author: claireguepin
 """
 
-import numpy as np
 from typing import Any, Optional
-from matplotlib.lines import Line2D
+
 import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.lines import Line2D
 
 
 def draw_with_errorbars(
