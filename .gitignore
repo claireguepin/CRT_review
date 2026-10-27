@@ -1,0 +1,5 @@
+# Ignore figures in pdf
+*.pdf
+
+# Ignore mac-related files
+.DS_Store
