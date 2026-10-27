@@ -1,5 +1,11 @@
 # Ignore figures in pdf
 *.pdf
+figures/
 
-# Ignore mac-related files
+# Ignore mac and python-related files
 .DS_Store
+__pycache__/
+*~
+≈
+# Ignore local environment
+env_312/
