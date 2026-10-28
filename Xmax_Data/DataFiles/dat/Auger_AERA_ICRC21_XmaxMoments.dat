@@ -1,0 +1,19 @@
+meanlgE meanXmax meanXmax_staterr meanXmax_syserr_up meanXmax_syserr_dn sigmaXmax sigmaXmax_staterr sigmaXmax_syserr_dn sigmaXmax_syserr_up
+17.5717 689.45 8.312 14.775 32.324 58.50 12.7 1.25 4.03
+17.7225 702.71 7.154 13.736 21.686 51.44 10.1 7.33 4.45
+17.8756 708.00 8.606 12.741 19.372 65.43 9.9 1.93 5.27
+18.0344 723.37 6.678 13.003 19.779 41.07 7.5 2.95 6.04
+18.1832 733.77 13.26 13.681 16.773 62.15 13.6 2.83 7.28
+18.4190 749.96 16.08 17.532 20.650 63.56 13.8 7.42 8.64
+
+
+#@article{Pont:2021pwd,
+#    author = "Pont, Bjarni",
+#    collaboration = "Pierre Auger",
+#    title = "{A Large Radio Detector at the Pierre Auger Observatory - Measuring the Properties of Cosmic Rays up to the Highest Energies}",
+#    doi = "10.22323/1.358.0395",
+#    journal = "PoS",
+#    volume = "ICRC2019",
+#    pages = "395",
+#    year = "2021"
+#}

@@ -1,0 +1,20 @@
+meanlgE Nevts meanXmax meanXmax_staterr
+17.3 19 646 16
+17.5 26 686 19
+17.7 22 696 16
+18.0 10 686 15
+
+
+#@article{Bezyazeekov:2018yjw,
+#    author = "Bezyazeekov, P. A. and others",
+#    title = "{Reconstruction of cosmic ray air showers with Tunka-Rex data using template fitting of radio pulses}",
+#    eprint = "1803.06862",
+#    archivePrefix = "arXiv",
+#    primaryClass = "astro-ph.IM",
+#    doi = "10.1103/PhysRevD.97.122004",
+#    journal = "Phys. Rev. D",
+#    volume = "97",
+#    number = "12",
+#    pages = "122004",
+#    year = "2018"
+#}

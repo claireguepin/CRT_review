@@ -1,0 +1,22 @@
+meanlgE meanXmax meanXmax_staterr meanXmax_syserr_up meanXmax_syserr_dn sigmaXmax sigmaXmax_staterr
+16.93 636.3 12.3 8 8 62.8 15.8
+17.13 651.6 6.8 8 8 61.2 8.8 
+17.37 656.0 5.5 8 8 53.2 8.0 
+17.63 659.5 5.5 8 8 37.5 10.4
+17.86 688.9 11.9 8 8 66.5 13.4
+18.10 714.3 12.1 8 8 47.5 18.0
+
+
+#@article{Corstanje:2021kik,
+#  author = "Corstanje, A. and others",
+#  title = "{Depth of shower maximum and mass composition of cosmic rays from 50 PeV to 2 EeV measured with the LOFAR radio telescope}",
+#  eprint = "2103.12549",
+#  archivePrefix = "arXiv",
+#  primaryClass = "astro-ph.HE",
+#  doi = "10.1103/PhysRevD.103.102006",
+#  journal = "Phys. Rev. D",
+#  volume = "103",
+#  number = "10",
+#  pages = "102006",
+#  year = "2021"
+#}

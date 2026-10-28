@@ -1,0 +1,37 @@
+meanlgE meanXmax sigmaXmax Nevts meanXmax_staterr meanlnA_qgsii04 meanlnA_qgsii04_staterr
+16.15 591. 71. 14794. 1. 1.577046 0.3408236E-01
+16.25 595. 69. 9085. 1. 1.652179 0.3448148E-01
+16.35 601. 68. 5792. 1. 1.657958 0.3487972E-01
+16.45 605. 63. 3710. 1. 1.733051 0.3527669E-01
+16.55 613. 65. 2262. 1. 1.665756 0.3567198E-01
+16.65 620. 67. 1490. 2. 1.631613 0.7213049E-01
+16.75 628. 63. 925. 2. 1.558858 0.7291186E-01
+16.85 633. 65. 604. 3. 1.593660 0.1105312
+16.95 644. 65. 385. 3. 1.404405 0.1116842
+17.09 656. 64. 407. 3. 1.258918 0.1132782
+17.29 670. 61. 147. 5. 1.160322 0.1925129
+17.48 679. 58. 60. 7. 1.226592 0.2743151
+
+
+#to appear in
+# article{Prosin2021,
+#  author = "to confirm",
+#  title = "{to confirm}",
+#  journal = "Phys. Atom. Nucl.",
+#  volume = "84",
+#  number = "9",
+#  pages = "unknown",
+#  year = "2021",
+#  note = "accepted"
+#}
+#While there is no full data from Phys. Atom. Nucl.
+#@article{Prosin2021,
+#  author = "Budnev, N. M. and others",
+#  collaboration = "TAIGA",
+#  title = "{TAIGA - an advanced hybrid detector complex for astroparticle physics, cosmic ray physics and gamma-ray astronomy}",
+#  doi = "10.22323/1.395.0731",
+#  journal = "PoS",
+#  volume = "ICRC2021",
+#  pages = "731",
+#  year = "2021"
+#}

@@ -1,0 +1,15 @@
+meanlgE meanXmax meanXmax_staterr sigmaXmax sigmaXmax_staterr
+17.24 632.40 16.20 62.06 4.89
+17.64 681.01 16.76 63.08 5.40
+18.12 727.37 18.44 57.78 6.93
+19.19 776.54 23.46 49.32 8.97
+
+#@article{Petrov:2020edv,
+#    author = "Petrov, Igor and Knurenko, Stanislav",
+#    title = "{Results of Ultra-high Energy Cosmic Ray Study by Radio Technique at Yakutsk Array}",
+#    doi = "10.22323/1.358.0385",
+#    journal = "PoS",
+#    volume = "ICRC2019",
+#    pages = "385",
+#    year = "2020"
+#}

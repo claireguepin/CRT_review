@@ -161,3 +161,59 @@ def get_plot_styles():
         "IceCube + IceTop (2010/06-2013/05) SIBYLL2.1": "^",
     }
     return e_rescaling, colors, markers
+
+
+
+def get_plot_styles_xmax():
+    """Return dictionaries for E_rescaling, color, and marker styles."""
+    # Define general plotting styles
+    plt.rcParams["font.family"] = "STIXGeneral"
+    plt.rcParams["mathtext.fontset"] = "cm"
+    plt.rcParams["font.size"] = 16
+    plt.rcParams["xtick.labelsize"] = 16
+    plt.rcParams["ytick.labelsize"] = 16
+    plt.rcParams["xtick.top"] = True
+    plt.rcParams["ytick.right"] = True
+
+    colors = {
+        "Auger_AERA_ICRC21_XmaxMoments": '#9467bd',
+        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": '#9467bd',
+        "Auger_FD_ICRC2019_XmaxMoments": '#8c564b',
+        "LOFAR_PRD2021_XmaxMoments": '#d62728',
+        "TA_ApJ2018_XmaxMoments_unbias": '#2ca02c',
+        "TA_ApJ2018_XmaxMoments": '#2ca02c',
+        "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": '#ff7f0e',
+        "Tunka-133_PhysAtNucl2021_XmaxMoments": '#1f77b4',
+        "TunkaRex_PRD2018_XmaxMoments": '#1f77b4',
+        "Yakutsk_ASR2019_XmaxMoments": '#e377c2',
+        "Yakutsk_RD_ICRC2019_XmaxMoments": '#e377c2'
+    }
+
+    markers = {
+        "Auger_AERA_ICRC21_XmaxMoments": 'o',
+        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": 'x',
+        "Auger_FD_ICRC2019_XmaxMoments": 'x',
+        "LOFAR_PRD2021_XmaxMoments": 'o',
+        "TA_ApJ2018_XmaxMoments_unbias": 'x',
+        "TA_ApJ2018_XmaxMoments": '^',
+        "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": 'x',
+        "Tunka-133_PhysAtNucl2021_XmaxMoments": 'x',
+        "TunkaRex_PRD2018_XmaxMoments": 'o',
+        "Yakutsk_ASR2019_XmaxMoments": 'x',
+        "Yakutsk_RD_ICRC2019_XmaxMoments": 'o'
+    }
+
+    labels = {
+        "Auger_AERA_ICRC21_XmaxMoments": 'Auger AERA',
+        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": 'Auger SD750+SD1500',
+        "Auger_FD_ICRC2019_XmaxMoments": 'Auger Hybrid',
+        "LOFAR_PRD2021_XmaxMoments": 'LOFAR',
+        "TA_ApJ2018_XmaxMoments_unbias": 'TA',
+        "TA_ApJ2018_XmaxMoments": 'TA',
+        "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": 'TALE',
+        "Tunka-133_PhysAtNucl2021_XmaxMoments": 'Tunka Cherenkov',
+        "TunkaRex_PRD2018_XmaxMoments": 'Tunka RD',
+        "Yakutsk_ASR2019_XmaxMoments": 'Yakutsk',
+        "Yakutsk_RD_ICRC2019_XmaxMoments": 'Yakutsk RD'
+    }
+    return colors, markers, labels
