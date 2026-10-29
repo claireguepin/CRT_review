@@ -446,6 +446,6 @@ plt.text(
 #          transform=ax[0].get_xaxis_transform(), ha='center', va='bottom')
 
 if plot_err_systematic:
-    plt.savefig("Figures/composition_syst.pdf")
+    plt.savefig("./figures/composition/composition_syst.pdf")
 else:
-    plt.savefig("Figures/composition.pdf")
+    plt.savefig("./figures/composition/composition.pdf")

@@ -176,13 +176,15 @@ def get_plot_styles_xmax():
     plt.rcParams["ytick.right"] = True
 
     colors = {
-        "Auger_AERA_ICRC21_XmaxMoments": '#9467bd',
-        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": '#9467bd',
-        "Auger_FD_ICRC2019_XmaxMoments": '#8c564b',
+        "Auger_AERA_PRD2024_XmaxMoments": '#9467bd',
+        "Auger_Delta_PRD2017_XmaxMoments": '#9467bd',
+        "Auger_FD_PRD2026_XmaxMoments": '#8c564b',
+        "Auger_SD_PRD2025_XmaxMoments": '#9467bd',
         "LOFAR_PRD2021_XmaxMoments": '#d62728',
         "TA_ApJ2018_XmaxMoments_unbias": '#2ca02c',
         "TA_ApJ2018_XmaxMoments": '#2ca02c',
         "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": '#ff7f0e',
+        "TALE_PRD2026_XmaxMoments": '#ff7f0e',
         "Tunka-133_PhysAtNucl2021_XmaxMoments": '#1f77b4',
         "TunkaRex_PRD2018_XmaxMoments": '#1f77b4',
         "Yakutsk_ASR2019_XmaxMoments": '#e377c2',
@@ -190,13 +192,15 @@ def get_plot_styles_xmax():
     }
 
     markers = {
-        "Auger_AERA_ICRC21_XmaxMoments": 'o',
-        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": 'x',
-        "Auger_FD_ICRC2019_XmaxMoments": 'x',
+        "Auger_AERA_PRD2024_XmaxMoments": 'o',
+        "Auger_Delta_PRD2017_XmaxMoments": 'x',
+        "Auger_FD_PRD2026_XmaxMoments": 'x',
+        "Auger_SD_PRD2025_XmaxMoments": '^',
         "LOFAR_PRD2021_XmaxMoments": 'o',
         "TA_ApJ2018_XmaxMoments_unbias": 'x',
         "TA_ApJ2018_XmaxMoments": '^',
         "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": 'x',
+        "TALE_PRD2026_XmaxMoments": 'o',
         "Tunka-133_PhysAtNucl2021_XmaxMoments": 'x',
         "TunkaRex_PRD2018_XmaxMoments": 'o',
         "Yakutsk_ASR2019_XmaxMoments": 'x',
@@ -204,13 +208,15 @@ def get_plot_styles_xmax():
     }
 
     labels = {
-        "Auger_AERA_ICRC21_XmaxMoments": 'Auger AERA',
-        "Auger_Delta_PRD2017_ICRC19_XmaxMoments": 'Auger SD750+SD1500',
-        "Auger_FD_ICRC2019_XmaxMoments": 'Auger Hybrid',
+        "Auger_AERA_PRD2024_XmaxMoments": 'Auger AERA',
+        "Auger_Delta_PRD2017_XmaxMoments": 'Auger SD750+SD1500 2017',
+        "Auger_FD_PRD2026_XmaxMoments": 'Auger Hybrid',
+        "Auger_SD_PRD2025_XmaxMoments": 'Auger SD 2025',
         "LOFAR_PRD2021_XmaxMoments": 'LOFAR',
         "TA_ApJ2018_XmaxMoments_unbias": 'TA',
         "TA_ApJ2018_XmaxMoments": 'TA',
-        "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": 'TALE',
+        "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments": 'TALE 2021',
+        "TALE_PRD2026_XmaxMoments": 'TALE 2026',
         "Tunka-133_PhysAtNucl2021_XmaxMoments": 'Tunka Cherenkov',
         "TunkaRex_PRD2018_XmaxMoments": 'Tunka RD',
         "Yakutsk_ASR2019_XmaxMoments": 'Yakutsk',

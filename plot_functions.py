@@ -64,6 +64,8 @@ def read_xmax_file(filename, moment="mean"):
     # Determine the moment columns based on the input
     y_col = f"{moment}Xmax"
     ystat_col = f"{moment}Xmax_staterr"
+    ystat_up_col = f"{moment}Xmax_staterr_up"
+    ystat_dn_col = f"{moment}Xmax_staterr_dn"
     ysys_up_col = f"{moment}Xmax_syserr_up"
     ysys_dn_col = f"{moment}Xmax_syserr_dn"
 
@@ -71,12 +73,16 @@ def read_xmax_file(filename, moment="mean"):
     y = df[y_col].astype(float).values if y_col in df.columns else None
     ystat = df[ystat_col].astype(
         float).values if ystat_col in df.columns else None
+    ystat_up = df[ystat_up_col].astype(
+        float).values if ystat_up_col in df.columns else None
+    ystat_dn = df[ystat_dn_col].astype(
+        float).values if ystat_dn_col in df.columns else None
     ysys_up = df[ysys_up_col].astype(
         float).values if ysys_up_col in df.columns else None
     ysys_dn = df[ysys_dn_col].astype(
         float).values if ysys_dn_col in df.columns else None
 
-    return x, y, ystat, ysys_up, ysys_dn
+    return x, y, ystat, ystat_up, ystat_dn, ysys_up, ysys_dn
 
 
 def draw_with_errorbars(
@@ -209,7 +215,6 @@ def draw_with_errorbars_xmax(
     x = np.asarray(x)
     y = np.asarray(y)
 
-    print(x)
     # Determine cap width
     if xw is None:
         xw = 0.03 * (np.max(x) - np.min(x))
@@ -219,12 +224,17 @@ def draw_with_errorbars_xmax(
     # --- Statistical errors (symmetric) ---
     if ysta is not None:
         ysta = np.asarray(ysta)
-        for xi, yi, dy in zip(x, y, ysta):
-            # # horizontal caps
-            # lines.append([(xi - xw, yi + dy), (xi + xw, yi + dy)])
-            # lines.append([(xi - xw, yi - dy), (xi + xw, yi - dy)])
-            # vertical stems
-            lines.append([(xi, yi + dy), (xi, yi - dy)])
+
+        if len(ysta) == 2:
+            ysta_dn = ysta[0, :]
+            ysta_up = ysta[1, :]
+
+            for xi, yi, dy_dn, dy_up in zip(x, y, ysta_dn, ysta_up):
+                 lines.append([(xi, yi + dy_up), (xi, yi - dy_dn)])
+        else:
+
+            for xi, yi, dy in zip(x, y, ysta):
+                lines.append([(xi, yi + dy), (xi, yi - dy)])
 
         lc_sta = mc.LineCollection(
             lines, colors=color, linewidths=linewidth_sta, alpha=alpha_sta)
@@ -236,6 +246,7 @@ def draw_with_errorbars_xmax(
         ysys = np.asarray(ysys)
         ylo, yhi = ysys
         print(ylo)
+        print(yhi)
 
         # Convert to lists
         ylo = list(ylo) if ylo is not None else []

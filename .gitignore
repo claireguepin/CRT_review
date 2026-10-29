@@ -1,5 +1,6 @@
-# Ignore figures in pdf
+# Ignore figures in pdf and data
 *.pdf
+*.dat
 figures/
 
 # Ignore mac and python-related files

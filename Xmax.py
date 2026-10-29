@@ -9,6 +9,7 @@ Created on Thu Jan 22 18:18:18 2026
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+import matplotlib.lines as mlines
 import pandas as pd
 
 from plot_functions import read_xmax_file, draw_with_errorbars_xmax
@@ -52,15 +53,18 @@ line_fe_e_sigma = np.loadtxt(
 # =============================================================================
 # XMAX DATA
 
-expedir = "./Xmax_Data/DataFiles/dat/"
+# expedir = "./Xmax_Data/DataFiles/dat/"
+expedir = "./Xmax_Data/Xmax_moments/"
 expetab = np.array([
-    "Auger_AERA_ICRC21_XmaxMoments",
-    "Auger_Delta_PRD2017_ICRC19_XmaxMoments",
-    "Auger_FD_ICRC2019_XmaxMoments",
+    "Auger_AERA_PRD2024_XmaxMoments",
+    "Auger_Delta_PRD2017_XmaxMoments",
+    "Auger_SD_PRD2025_XmaxMoments",
+    "Auger_FD_PRD2026_XmaxMoments",
     "LOFAR_PRD2021_XmaxMoments",
     "TA_ApJ2018_XmaxMoments_unbias",
     "TA_ApJ2018_XmaxMoments",
     "TALE_unbiased_EPOSLHC_ApJ2021_XmaxMoments",
+    "TALE_PRD2026_XmaxMoments",
     "Tunka-133_PhysAtNucl2021_XmaxMoments",
     "TunkaRex_PRD2018_XmaxMoments",
     "Yakutsk_ASR2019_XmaxMoments",
@@ -102,11 +106,11 @@ i = 0
 
 for fname in expetab:
     # if (fname != expetab[5] and fname != expetab[9] and fname != expetab[10]):
-    if (fname != expetab[5] and fname != expetab[10]):
+    if (fname != "TA_ApJ2018_XmaxMoments" and fname != "Yakutsk_RD_ICRC2019_XmaxMoments"):
         # if (fname == expetab[0] or fname == expetab[1] or fname == expetab[2]):
-        print(fname)
+        print("\n" + fname)
 
-        x, y, ystat, ysys_up, ysys_dn = read_xmax_file(
+        x, y, ystat, ystat_up, ystat_dn, ysys_up, ysys_dn = read_xmax_file(
             expedir + fname + '.dat', "mean")
         # There is a mistake with the signs in the TA data
         if fname == expetab[4]:
@@ -165,7 +169,8 @@ plt.plot(10**line_fe_e_mean[:, 0]/1e9, line_fe_e_mean[:, 1],
 #                                color="gray", ls=linestyle, lw=2))
 legend_labels = ['QGSJet-II.04', 'EPOS-LHC', 'Sibyll2.3d']
 legend_ls = [':', '-', '--']
-ax.legend(legend_ls, legend_labels, frameon=False,
+handles = [mlines.Line2D([], [], linestyle=ls, color='black') for ls in legend_ls]
+ax.legend(handles, legend_labels, frameon=False,
           fontsize=14, loc="lower right")
 
 # plot_model_rails(ax, moment="mean", bool_legend=True, loc="lower right")
@@ -178,7 +183,7 @@ ax.set_xlabel(r"$E\,[\rm{GeV}]$")
 ax.set_ylabel(r"$\langle X_{\max} \rangle\,[\mathrm{g\,cm^{-2}}]$")
 
 # plt.tight_layout()
-plt.savefig('Xmax_mean_ExpData.pdf')
+plt.savefig('./figures/composition/Xmax_mean_ExpData.pdf')
 
 fig, ax = plt.subplots(1, 1, figsize=(10, 7))
 plt.subplots_adjust(left=0.08, bottom=0.1, right=0.95)
@@ -189,17 +194,30 @@ i = 0
 for fname in expetab:
     # if (fname != expetab[5] and fname != expetab[9] and fname != expetab[10]
     #     and (fname != expetab[7] or moment != "sigma")):
-    if (fname != expetab[5] and fname != expetab[10]
-            and (fname != expetab[7] or moment != "sigma")):
+    # if (fname != expetab[5] and fname != expetab[10]
+    #         and (fname != expetab[7] or moment != "sigma")):
+    if (fname != "TA_ApJ2018_XmaxMoments"
+       and fname != "Yakutsk_RD_ICRC2019_XmaxMoments"
+       and fname != "TALE_PRD2026_XmaxMoments"):
+    # if (fname == "Auger_AERA_PRD2024_XmaxMoments"):
         print(fname)
 
-        x, y, ystat, ysys_up, ysys_dn = read_xmax_file(
+        x, y, ystat, ystat_up, ystat_dn, ysys_up, ysys_dn = read_xmax_file(
             expedir + fname + '.dat', moment)
+        print(y)
+        print(ystat)
+        print(ystat_up)
+        print(ystat_dn)
+        print(ysys_up)
+        print(ysys_dn)
+        if np.array([ystat]).any() == None and np.array([ystat_dn]).any() != None:
+            ystat = np.vstack([ystat_dn, ystat_up])
         # There is a mistake with the signs in the TA data
-        if fname == expetab[4]:
-            for ii in range(len(ysys_dn)):
-                if ysys_dn[ii] < 0:
-                    ysys_dn[ii] *= -1
+        # print(ysys_dn)
+        # if fname == "TA_ApJ2018_XmaxMoments_unbias":
+        #     for ii in range(len(ysys_dn)):
+        #         if ysys_dn[ii] < 0:
+        #             ysys_dn[ii] *= -1
 
         if y is None:
             print(
@@ -257,7 +275,8 @@ plt.plot(10**line_fe_e_sigma[:, 0]/1e9, line_fe_e_sigma[:, 1],
 
 legend_labels = ['QGSJet-II.04', 'EPOS-LHC', 'Sibyll2.3d']
 legend_ls = [':', '-', '--']
-ax.legend(legend_ls, legend_labels, frameon=False,
+handles = [mlines.Line2D([], [], linestyle=ls, color='black') for ls in legend_ls]
+ax.legend(handles, legend_labels, frameon=False,
           fontsize=14, loc="lower left")
 
 # plot_model_rails(ax, moment="sigma", bool_legend=True, loc="lower left")
@@ -270,4 +289,4 @@ ax.set_xlabel(r"$E\,[\rm{GeV}]$")
 ax.set_ylabel(r"$\sigma(X_{\max})\,[\mathrm{g\,cm^{-2}}]$")
 
 # plt.tight_layout()
-plt.savefig('Xmax_sigma_ExpData.pdf')
+plt.savefig('./figures/composition/Xmax_sigma_ExpData.pdf')
